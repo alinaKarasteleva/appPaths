@@ -1,0 +1,422 @@
+.pers_area_container {
+   /* margin: 0 40px; */
+}
+
+
+.pers_area_header {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+   padding-bottom: 20px;
+   border-bottom: 2px solid teal;
+}
+
+.user_photo {
+   width: 100px;
+   height: 100px;
+   background-color: teal;
+   border-radius: 50%;
+
+   margin-right: 20px;
+}
+
+.user_name {
+   font-size: 22px;
+   margin-bottom: 10px;
+}
+
+.user_poins {}
+
+
+.paths_container{
+   margin: 20px 0;
+}
+
+.one_path_contaiter {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   margin-top: 20px;
+}
+
+.one_path {
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+
+   overflow: scroll;
+   overflow-y: hidden;
+}
+
+
+
+.path_skill {
+
+   background-color: teal;
+   border-radius: 50%;
+   border: none;
+   width: 150px;
+   height: 150px;
+   margin-right: 30px;
+   padding: 10px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+
+   font-size: 20px;
+   font-weight: 500;
+   color: white;
+
+   cursor: pointer;
+}
+
+.path_skill:hover {
+   background-color:  rgb(0, 101, 101);
+}
+
+.one_path_day_not_disabled {
+   border: 2px solid teal;
+   min-width: 300px;
+   height: 200px;
+   padding: 10px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   margin-right: 20px;
+
+   background-color: yellow;
+
+}
+
+
+.one_path_day_disabled {
+   border: 2px solid teal;
+   min-width: 300px;
+   height: 200px;
+   padding: 10px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   margin-right: 20px;
+
+   opacity: 0.5;
+   background-color: red;
+}
+
+
+
+.day_title {
+   font-size: 18px;
+   font-weight: 500;
+   text-align: center;
+
+   background: none;
+   border: none;
+   cursor: pointer;
+   color: black;
+
+   position: relative;
+}
+
+.day_title:hover::after {
+   position: absolute;
+   content: '';
+
+   height: 2px;
+   width: 100%;
+   left: 0;
+   bottom: -3px;
+   background-color: teal;
+}
+
+.day_container_checkbox {
+   max-height: 80px;
+   overflow: hidden;
+}
+
+.day_container_checkbox_dotes {
+
+   margin: 0 auto;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   font-size: 22px;
+}
+
+.day_checkbox {
+   display: flex;
+   flex-direction: row;
+   margin-bottom: 6px;
+}
+
+.day_checkbox_inp {
+   margin-right: 10px;
+
+}
+
+.day_checkbox_label {
+   max-width: 100%;
+   display: -webkit-box;
+   overflow: hidden;
+   -webkit-line-clamp: 1;
+   -webkit-box-orient: vertical;
+}
+
+.day_status {
+   display: flex;
+   margin: 0 auto;
+   margin-top: 10px;
+   text-align: center;
+}
+
+.day_status_div {
+   margin-bottom: 10px;
+}
+
+.day_btns_container {
+   display: flex;
+   flex-direction: row;
+   width: 250px;
+   justify-content: space-between;
+   align-items: center;
+   margin: 0 auto;
+}
+
+.day_btn {
+   height: 40px;
+   width: 100px;
+   border: none;
+   background-color: teal;
+   border-radius: 10px;
+   color: white;
+
+}
+
+.day_btn:hover {
+   background-color: rgb(0, 101, 101);
+}
+
+
+
+
+
+/* ---------popup day----------------- */
+.popup_day {
+   z-index: 1000;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.8);
+   top: 0;
+   left: 0;
+}
+
+.popup_day_body {
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.popup_day_content {
+   background-color: white;
+   color: black;
+   height: 400px;
+   width: 600px;
+   padding: 20px 100px;
+   position: relative;
+}
+
+.popup_day_close {
+   position: absolute;
+   font-size: 20px;
+   right: 18px;
+   top: 10px;
+   font-weight: 500;
+   background-color: white;
+   border: none;
+   padding: 6x;
+}
+
+.popup_day_container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 286px;
+}
+
+.popup_day_title {
+   font-size: 25px;
+   text-align: center;
+   margin: 20px 0 10px 0;
+}
+
+.popup_day_time {
+   text-align: center;
+   /* color: teal; */
+   font-size: 20px;
+   margin-bottom: 20px;
+
+}
+
+.popup_day_advices {
+   margin-bottom: 20px;
+}
+
+.popup_day_advice {
+   margin-bottom: 10px;
+}
+
+.popup_day_plans {
+   margin-bottom: 20px;
+}
+
+
+
+
+
+/* --------popup path ------------ */
+
+.popup_path {
+   z-index: 1000;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.8);
+   top: 0;
+   left: 0;
+}
+
+.popup_path_body {
+   min-height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.popup_path_content {
+   background-color: white;
+   color: black;
+   max-height: 650px;
+   width: 600px;
+   padding: 20px 100px;
+   position: relative;
+}
+
+.popup_path_close {
+   position: absolute;
+   font-size: 20px;
+   right: 18px;
+   top: 10px;
+   font-weight: 500;
+   background-color: white;
+   border: none;
+   padding: 6x;
+}
+
+.popup_path_title {
+   text-align: center;
+   font-weight: 400;
+   font-size: 20px;
+   margin-bottom: 20px;
+
+   border-bottom: 2px solid teal;
+   padding-bottom: 10px;
+}
+
+.popup_path_container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   max-height: 540px;
+}
+
+.popup_path_icon_container {
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-start;
+
+   margin-bottom: 20px;
+
+}
+
+.popup_path_icon_item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   width: 100px;
+}
+
+.popup_path_icon {
+   width: 80px;
+   height: 80px;
+   padding: 15px;
+   border-radius: 10px;
+   background-color: teal;
+
+}
+
+.popup_path_icon_text {
+   margin-top: 10px;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.popup_path_counter_container {
+   display: flex;
+   align-items: center;
+   
+   margin: 0 auto 20px;
+}
+
+.popup_path_icon_counter {
+   /* width: 50px;
+   height: 50px;
+   margin-right: 20px; */
+}
+
+.popup_path_count_text {
+   font-size: 20px;
+}
+.popup_path_count_days {
+   font-size: 20px;
+   font-weight: 500;
+   color: teal;
+}
+
+.popup_path_advices_container {
+   margin-bottom: 20px;
+}
+.popup_path_advices_title {
+   font-size: 18px;
+   margin-bottom: 10px;
+}
+
+.popup_path_advices_li{
+   margin-bottom: 8px;
+}
+
+
+.popup_path_btn {
+   display: block;
+   margin: 0 auto;
+
+   height: 40px;
+   width: 100px;
+   border: none;
+   background-color: teal;
+   border-radius: 10px;
+   color: white;
+}
+
+.popup_path_btn:hover {
+   background-color: rgb(0, 101, 101);
+}

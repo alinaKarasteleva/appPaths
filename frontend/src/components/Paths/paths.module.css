@@ -1,0 +1,241 @@
+/* -----------PathList--------------- */
+.path_list_title {
+   font-size: 25px;
+   font-weight: 500;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.path_list_container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+
+/* --------------Paths ------------- */
+.path_item_link {
+   text-decoration: none;
+   color: black;
+   width: 49%;
+}
+
+.path_item {
+   padding: 20px;
+   border: 2px solid teal;
+   margin-top: 20px;
+   text-decoration: none;
+   min-height: 500px;
+
+}
+
+.path_item_title {
+   font-weight: 500;
+   font-size: 22px;
+   margin-bottom: 20px;
+}
+
+
+/* time */
+.path_item_time_container {
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.path_item_time_icon {
+   width: 30px;
+   height: auto;
+   margin-right: 15px;
+}
+
+.path_item_time_text {
+   font-size: 18px;
+}
+
+
+/* necessary */
+.necessary_title {
+   color: teal;
+   font-size: 18px;
+   border-bottom: 2px solid teal;
+
+   margin-bottom: 20px;
+
+}
+
+.necessary_text {
+   max-width: 100%;
+   display: -webkit-box;
+   overflow: hidden;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   margin-bottom: 10px;
+}
+
+
+/* rating */
+.rating_container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+   margin-top: 20px;
+}
+
+.rating_text {
+   margin-right: 10px;
+}
+
+.star_icon {
+   width: 18px;
+   height: auto;
+}
+
+
+
+
+/* ---------------Path------------------- */
+.path_title {
+   font-size: 30px;
+   font-weight: 500;
+   margin-top: 20px;
+}
+
+.path_btn_start {
+   background-color: teal;
+   text-transform: uppercase;
+   text-decoration: none;
+   color: white;
+   border: none;
+   border-radius: 10px;
+
+   padding: 15px 20px;
+
+   margin: 20px 0;
+}
+
+.btn_start_path:hover {
+   background-color: rgb(0, 101, 101);
+}
+
+/* time */
+.path_total {
+   margin-bottom: 20px;
+}
+
+.path_total_text {
+   font-size: 20px;
+}
+
+
+/* people */
+
+.path_people_container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+
+   margin-bottom: 40px;
+}
+
+.path_people_item {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border: 2px solid teal;
+   width: 200px;
+   height: 80px;
+}
+
+.path_people_text {
+   margin-bottom: 10px;
+   font-size: 18px;
+}
+
+.path_people_count {
+   font-weight: 500;
+   font-size: 20px;
+   color: teal;
+}
+
+
+/* necessary */
+.path_necessary_item {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+   margin-bottom: 20px;
+}
+
+.path_necessary_icon {
+   width: 45px;
+   /* background-color: teal; */
+   border-radius: 10px;
+   height: auto;
+
+   margin-right: 30px;
+}
+
+.path_necessary_title {
+   font-size: 20px;
+   border-bottom: 2px solid teal;
+   margin-right: 30px;
+   width: 144px;
+}
+
+.path_necessary_text {
+   font-size: 18px;
+}
+
+/*  */
+/* .path_btn_plan {
+   background-color: white;
+   text-transform: uppercase;
+   text-decoration: none;
+   font-weight: 600;
+   color: teal;
+   border: 2px solid teal;
+   border-radius: 10px;
+
+   padding: 15px 20px;
+
+   margin: 20px 0;
+} */
+
+
+/* ----------plan--------- */
+.plan_title {
+   font-size: 25px;
+   margin: 20px 0;
+}
+
+.plan_item {
+   margin-bottom: 40px;
+   position: relative;
+}
+
+.plan_item::after {
+   position: absolute;
+   content: '';
+
+   background-color: teal;
+   width: 100%;
+   height: 2px;
+   bottom: -20px;
+   left: 0;
+}
+
+.plan_day {
+   font-size: 22px;
+   margin-bottom: 10px;
+}
+
+.plan_text {
+   font-style: 20px;
+
+}

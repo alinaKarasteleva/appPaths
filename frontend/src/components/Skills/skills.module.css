@@ -1,0 +1,50 @@
+.skills {
+   margin: 10px 50px;
+}
+
+.skill_el {
+   display: flex;
+   align-items: center;
+   margin-bottom: 20px;
+   text-decoration: none;
+   position: relative;
+}
+
+
+.circle {
+   position: relative;
+   border-radius: 100%;
+   width: 35px;
+   height: 35px;
+   margin-top: 50px;
+}
+
+.circle:first-child {
+   margin-top: 0;
+}
+
+
+
+.skill_link {
+   text-decoration: none;
+   color: black;
+   font-size: 20px;
+   padding-bottom: 4px;
+}
+
+
+.skill_link_container {
+   display: flex;
+   align-items: center;
+   height: 35px;
+
+   padding: 0 43px 0 30px;
+   margin: 0 -19px;
+
+   border-top-right-radius: 35px;
+   border-bottom-right-radius: 35px;
+
+   transition: color .4s ease-in-out, box-shadow .4s ease-in-out;
+}
+
+

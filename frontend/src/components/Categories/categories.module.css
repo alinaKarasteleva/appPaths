@@ -1,0 +1,28 @@
+.categories_item {
+   position: relative;
+   display: flex;
+   margin: 100px auto;
+   
+   width: 450px;
+   height: 450px;   
+ }
+
+.category {
+   position: absolute;
+   transform: translate(-50%, -50%);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+
+   width: 140px;
+   height: 140px;
+   text-decoration: none;
+   border-radius: 50%;
+   color: rgb(21, 21, 21);
+   font-size: 15px;
+   text-transform: uppercase;
+
+
+}

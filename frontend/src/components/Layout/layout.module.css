@@ -1,0 +1,97 @@
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.main {
+   margin: 0 40px;
+   flex: 1 1 auto;
+}
+
+.header {
+   margin: 20px 40px;
+   display: flex;
+   justify-content: space-between;
+
+}
+
+.header_links {
+   text-decoration: none;
+}
+
+.header_btns {
+   background-color: teal;
+   text-decoration: none;
+   color: white;
+   border: none;
+   border-radius: 10px;
+
+   padding: 15px 20px;
+}
+
+
+.header_btns:hover {
+   background-color: rgb(0, 101, 101);
+}
+
+
+
+/* ------------------SIGN---------------------- */
+
+.sign_title {
+   text-align: center;
+   text-transform: uppercase;
+   font-size: 25px;
+   font-weight: 500;
+   margin: 40px 0;
+}
+
+.sign_form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 0 auto;
+   width: 350px;
+
+}
+
+.sign_inp {
+   width: 330px;
+   height: 40px;
+   padding-left: 10px;
+   margin-bottom: 20px;
+   border-radius: 10px;
+   border: 2px solid teal;
+   font-size: 15px;
+}
+
+.sign_btn {
+   width: 330px;
+   height: 46px;
+   border-radius: 10px;
+   border: none;
+   background-color: teal;
+   font-size: 15px;
+   text-transform: uppercase;
+   color: white;
+}
+
+.sign_btn:hover {
+   background-color: rgb(0, 101, 101);
+}
+
+.sign_back_img {
+   background-size: cover;
+   overflow: hidden;
+}
+
+
+
+
+.footer {
+   width: 100%;
+   height: 80px;
+   background-color: teal;
+   margin-top: 40px;
+}
