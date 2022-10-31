@@ -12,14 +12,14 @@ dotenv.config()
 const { sequelize } = require('./db/models');
 
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
 
-const mainRouter = require('./routes/main');
-const addNewPathRouter = require('./routes/addNewPath');
-const openPathRouter = require('./routes/openPath');
+// const mainRouter = require('./routes/main');
+// const addNewPathRouter = require('./routes/addNewPath');
+// const openPathRouter = require('./routes/openPath');
 
 
 // app.use(cookieParser())
@@ -36,28 +36,43 @@ const openPathRouter = require('./routes/openPath');
 // app.use(expressSession(sessionConfig))
 
 
-app.use(morgan("dev"));                             //Упрощает понимание работы, в консоле выдает (код, врями, биты): 200 11.922 ms - 26
-app.use(express.urlencoded({ extended: true }));     //Эта строчка учит кодировать данные в формате x-www-form-urlencoded
-app.use(express.json());                            //Cтрочка учит express обрабатывать json файлы
-
-app.use(express.static(path.join(__dirname, 'public')));  //Подключаем папку public со статическими файлами (картинки, стили и тп)4
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 
-
-
-app.use(cors({
-    origin: [
-        'http://localhost:3000',
-]
-}));
+app.use(morgan("dev"));                             
+app.use(express.urlencoded({ extended: true }));     
+app.use(express.json());                           
+// app.use(express.static(path.join(__dirname, 'public')));
 
 
 
 
-app.use('/', mainRouter);
-app.use('/add_new_path', addNewPathRouter);
-app.use('/open_path', openPathRouter);
+// корса там не было
+// app.use(cors({
+//     origin: [
+//         'http://localhost:3000',
+// ]
+// }));
 
+
+
+
+// app.use('/', mainRouter);
+// app.use('/add_new_path', addNewPathRouter);
+// app.use('/open_path', openPathRouter);
+
+app.get('/ping', (req, res) => {
+    res.send('pong')
+})
+
+
+
+// The "catchall" handler: for any request that doesn't
+// match one above, send back React's index.html file.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
+  });
 
 
 
