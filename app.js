@@ -9,7 +9,9 @@ dotenv.config()
 // const cookieParser = require('cookie-parser')
 // const expressSession = require('express-session')
 
-const { sequelize } = require('./db/models');
+// const { sequelize } = require('./db/models');
+// "sequelize": "^6.23.2",
+// "sequelize-cli": "^6.5.1"
 
 
 const PORT = process.env.PORT || 3001;
@@ -40,9 +42,9 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 
-app.use(morgan("dev"));                             
-app.use(express.urlencoded({ extended: true }));     
-app.use(express.json());                           
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -71,8 +73,8 @@ app.get('/ping', (req, res) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname+'/frontend/build/index.html'));
-  });
+    res.sendFile(path.join(__dirname + '/frontend/build/index.html'));
+});
 
 
 
