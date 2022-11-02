@@ -18,7 +18,7 @@ import NewPath from './components/NewPath/NewPath';
 
 function App() {
 
-// console.log('process.env', process.env)
+console.log('process.env', process.env)
 
   return (
 
