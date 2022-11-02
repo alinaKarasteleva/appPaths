@@ -9,8 +9,9 @@ dotenv.config()
 // const cookieParser = require('cookie-parser')
 // const expressSession = require('express-session')
 
-const { sequelize } = require('./db/models');
-
+// const { sequelize } = require('./db/models');
+// "sequelize": "^6.23.2",
+// "sequelize-cli": "^6.5.1",
 
 
 const PORT = process.env.PORT || 3001;
@@ -57,7 +58,7 @@ app.use(express.json());
 // }));
 
 
-sequelize.authenticate()
+
 
 // app.use('/', mainRouter);
 // app.use('/add_new_path', addNewPathRouter);
