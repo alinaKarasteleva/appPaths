@@ -13,7 +13,7 @@ import {
 } from '../../redux/actionCreators/currentAC';
 import styles from './current.module.css'
 import arrows from './icons/arrows.png'
-
+import { SITE_URL } from '../../config';
 
 
 function CurrentNav() {
@@ -63,7 +63,8 @@ function CurrentNav() {
       }
 
       if (id_path) {
-         fetch(`http://localhost:3001/open_path/${id_path}`)
+         // fetch(`http://localhost:3001/open_path/${id_path}`)
+         fetch(`${SITE_URL}${id_path}`)
             .then(res => res.json())
             .then(data => console.log(data))
          //    .then(data => {

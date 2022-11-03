@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { SITE_URL } from '../../config';
 import {
    pathChangeCategoryAC,
    pathChangeDescriptionAC,
@@ -38,7 +39,6 @@ function NewPath() {
 
 
    const days = useSelector(state => state.pathEditorReducer.days)
-
 
    useEffect(() => {
       // записываю сколько всего дней набралось
@@ -147,7 +147,8 @@ function NewPath() {
 
       // TODO  нужно id_user, когда будет сделана регистрация
 
-      fetch(`http://localhost:3001/add_new_path`, {
+      // fetch(`http://localhost:3001/add_new_path`, {
+      fetch(`${SITE_URL}/add_new_path`, {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({
