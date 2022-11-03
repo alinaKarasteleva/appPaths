@@ -22,11 +22,16 @@ function App() {
   console.log('process.env', process.env)
   console.log('SITE_URL', SITE_URL)
 
+  const pongHandler =async  () => {
+    const res = await fetch(SITE_URL)
+    const data = res.json()
+    console.log(data)
+  }
 
   return (
 
     <Provider store={store}>
-
+      <button onClick={pongHandler}> Ping button</button>
       {/* Достаю темы */}
       <CatAndSubcatFromDB />
 
