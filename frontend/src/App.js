@@ -23,7 +23,7 @@ function App() {
   console.log('SITE_URL', SITE_URL)
 
   const pongHandler = async () => {
-    const res = await fetch(`${SITE_URL}/ping`)
+    const res = await fetch(`${SITE_URL}ping`)
     const data = res.json()
     console.log(data)
   }
