@@ -19,9 +19,9 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
-// const mainRouter = require('./routes/main');
-// const addNewPathRouter = require('./routes/addNewPath');
-// const openPathRouter = require('./routes/openPath');
+const mainRouter = require('./routes/main');
+const addNewPathRouter = require('./routes/addNewPath');
+const openPathRouter = require('./routes/openPath');
 
 
 // app.use(cookieParser())
@@ -60,9 +60,9 @@ app.use(express.json());
 
 
 
-// app.use('/api', mainRouter);
-// app.use('/api/add_new_path', addNewPathRouter);
-// app.use('/api/open_path', openPathRouter);
+app.use('/api', mainRouter);
+app.use('/api/add_new_path', addNewPathRouter);
+app.use('/api/open_path', openPathRouter);
 
 app.get('/ping', (req, res) => {
     res.send('pong')
