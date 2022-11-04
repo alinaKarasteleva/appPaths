@@ -64,7 +64,7 @@ function CurrentNav() {
 
       if (id_path) {
          // fetch(`http://localhost:3001/open_path/${id_path}`)
-         fetch(`${SITE_URL}api/open_path/${id_path}`)
+         fetch(`${SITE_URL()}api/open_path/${id_path}`)
             .then(res => res.json())
             .then(data => console.log(data))
          //    .then(data => {

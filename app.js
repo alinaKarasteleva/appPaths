@@ -50,12 +50,12 @@ app.use(express.json());
 
 
 
-// корса там не было
-// app.use(cors({
-//     origin: [
-//         'http://localhost:3000',
-// ]
-// }));
+// корс
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+]
+}))
 
 
 
@@ -65,7 +65,7 @@ app.use('/api/add_new_path', addNewPathRouter);
 app.use('/api/open_path', openPathRouter);
 
 app.get('/ping', (req, res) => {
-    res.send('pong')
+    res.json({'answer': 'pong'})
 })
 
 
