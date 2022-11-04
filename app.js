@@ -9,7 +9,7 @@ dotenv.config()
 // const cookieParser = require('cookie-parser')
 // const expressSession = require('express-session')
 
-// const { sequelize } = require('./db/models');
+const { sequelize } = require('./db/models');
 // "sequelize": "^6.23.2",
 // "sequelize-cli": "^6.5.1",
 
