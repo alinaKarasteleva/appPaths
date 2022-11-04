@@ -1,6 +1,7 @@
 const pg = require('pg');
 
 const conString = "postgres://xbcbcqwb:Ccb5H8jWFLMB0Ui23PyqIcH9QTzNw4Aq@mouse.db.elephantsql.com/xbcbcqwb" 
+// const conString = "postgres://pathsdb_user:HAG9XBnRZyULTIqbhaXv5ySUrnG9vxQ5@dpg-cdhr3uirrk06v9sdsjl0-a.frankfurt-postgres.render.com/pathsdb" 
 const client = new pg.Client(conString);
 client.connect(function(err) {
   if(err) {

@@ -148,7 +148,7 @@ function NewPath() {
       // TODO  нужно id_user, когда будет сделана регистрация
 
       // fetch(`http://localhost:3001/add_new_path`, {
-      fetch(`${SITE_URL}/add_new_path`, {
+      fetch(`${SITE_URL}api/add_new_path`, {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({

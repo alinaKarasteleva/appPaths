@@ -4,7 +4,7 @@ const { sequelize, Skill, Path, BasicAdvice, Day, DayAdvice, Plan } = require('.
 
 
 
-router.post('/', async (req, res) => {
+router.post('/api/', async (req, res) => {
 
 
    const {

@@ -9,7 +9,7 @@ dotenv.config()
 // const cookieParser = require('cookie-parser')
 // const expressSession = require('express-session')
 
-// const { sequelize } = require('./db/models');
+const { sequelize } = require('./db/models');
 // "sequelize": "^6.23.2",
 // "sequelize-cli": "^6.5.1",
 
@@ -60,9 +60,9 @@ app.use(express.json());
 
 
 
-// app.use('/', mainRouter);
-// app.use('/add_new_path', addNewPathRouter);
-// app.use('/open_path', openPathRouter);
+// app.use('/api', mainRouter);
+// app.use('/api/add_new_path', addNewPathRouter);
+// app.use('/api/open_path', openPathRouter);
 
 app.get('/ping', (req, res) => {
     res.send('pong')
