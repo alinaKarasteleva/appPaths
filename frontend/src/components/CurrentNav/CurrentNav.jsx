@@ -29,10 +29,10 @@ function CurrentNav() {
    const [ourPath, setOurPath] = useState(null)
 
 
-   const categories = useSelector(state => state.categoriesReducer.categories)
-   const subcategories = useSelector(state => state.subcategoriesReducer.subcategories)
-   const skills = useSelector(state => state.skillsReducer.skills)
-   const paths = useSelector(state => state.pathsReducer.paths)
+   const categories = useSelector(state => state?.categoriesReducer?.categories)
+   const subcategories = useSelector(state => state?.subcategoriesReducer?.subcategories)
+   const skills = useSelector(state => state?.skillsReducer?.skills)
+   const paths = useSelector(state => state?.pathsReducer?.paths)
 
 
 
