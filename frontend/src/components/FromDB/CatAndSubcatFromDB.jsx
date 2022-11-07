@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { sagaCategoriesFromDBAC, sagaPathsFromDBAC, sagaSkillsFromDBAC, sagaSubategoriesFromDBAC } from '../../redux/actionCreators/dbAC';
+import { getCategoriesFromDBAC, getPathsFromDBAC, getSkillsFromDBAC, getSubcategoriesFromDBAC, sagaCategoriesFromDBAC, sagaPathsFromDBAC, sagaSkillsFromDBAC, sagaSubategoriesFromDBAC } from '../../redux/actionCreators/dbAC';
+import { SITE_URL } from '../../config';
 
 function CatAndSubcatFromDB() {
    const dispatch = useDispatch()
@@ -13,24 +14,25 @@ function CatAndSubcatFromDB() {
       dispatch(sagaPathsFromDBAC())
 
 
+      fetch(`${SITE_URL()}api`)
       // fetch(`http://localhost:3001/`)
-      //    .then(res => res.json())
-      //    .then(data => {
+         .then(res => res.json())
+         .then(data => {
 
 
-      //       // CategoriesFromDB
-      //       dispatch(getCategoriesFromDBAC(data.categories))
+            // CategoriesFromDB
+            dispatch(getCategoriesFromDBAC(data.categories))
 
-      //       // SubcategoriesFromDB
-      //       dispatch(getSubcategoriesFromDBAC(data.subcategories))
+            // SubcategoriesFromDB
+            dispatch(getSubcategoriesFromDBAC(data.subcategories))
 
-      //       // SkillsFromDB
-      //       dispatch(getSkillsFromDBAC(data.skills))
+            // SkillsFromDB
+            dispatch(getSkillsFromDBAC(data.skills))
 
-      //       // PathsFromDB
-      //       dispatch(getPathsFromDBAC(data.paths))
-      //    }
-      //    )
+            // PathsFromDB
+            dispatch(getPathsFromDBAC(data.paths))
+         }
+         )
 
 
 

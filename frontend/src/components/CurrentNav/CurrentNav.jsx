@@ -63,18 +63,19 @@ function CurrentNav() {
       }
 
       if (id_path) {
-         // fetch(`http://localhost:3001/open_path/${id_path}`)
          fetch(`${SITE_URL()}api/open_path/${id_path}`)
             .then(res => res.json())
-            .then(data => console.log(data))
-         //    .then(data => {
-         //       dispatch(getCategoriesFromDBAC(data.categories))
+            .then(data => {
+               const path = paths.find(el => el.id_path === Number(id_path))
+               dispatch(currentPathAC({ basicAdvices: data.basicAdvices, days: data.plansAndAdvices, path }))
+            })
 
 
-               setOurPath(paths.find(el => el.id_path === Number(id_path)))
-               dispatch(currentPathAC(paths.find(el => el.id_path === Number(id_path))))
-            } else {
-               setOurPath(null)
+         setOurPath(paths.find(el => el.id_path === Number(id_path)))
+
+
+      } else {
+         setOurPath(null)
          dispatch(deleteCurrentPathAC())
       }
 

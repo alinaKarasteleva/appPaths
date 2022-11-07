@@ -8,7 +8,7 @@ function AllPaths() {
    // Достаю все пути и выбираю относящиеся к моим и маплю
    const ourSkill = useSelector(state => state.currentReducer?.skill)
    const paths = useSelector(state => state.pathsReducer?.paths)
-   const ourPaths = paths.filter(el => el.id_skill === ourSkill?.id_skill)
+   const ourPaths = paths?.filter(el => el.id_skill === ourSkill?.id_skill)
 
 
 

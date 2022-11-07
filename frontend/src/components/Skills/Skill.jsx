@@ -7,7 +7,7 @@ function Skill({ skill }) {
 
 
    const [isHover, setIsHover] = useState(false)
-   const color = useSelector(state => state.currentReducer.category.color)
+   const color = useSelector(state => state?.currentReducer?.category?.color)
 
    const handleMouseEnter = () => {
       setIsHover(true)

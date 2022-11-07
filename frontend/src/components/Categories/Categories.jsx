@@ -7,7 +7,7 @@ import styles from './categories.module.css'
 function Categories() {
   
    //Достаю все категории и меплю их
-   const categories = useSelector(state => state.categoriesReducer.categories)
+   const categories = useSelector(state => state?.categoriesReducer?.categories)
   
 
 

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import Plan from './Plan';
+import PathContent from './PathContent';
 import starIcon from './img/star.png'
+import clockIcon from './img/time.png'
+import dayIcon from './img/calendar.png'
 import skillIcon from './img/suitcase.png'
 import stuffIcon from './img/pencil.png'
 import styles from './paths.module.css'
@@ -14,30 +16,32 @@ function Path() {
    const [totalTime, setTotalTime] = useState()
 
 
-   // Достаю текущие категорию, подкатегорию, скил и путь 
-   // const ourPath = useSelector(state => state.currentReducer.path)
-
-   // const timeInMin = ourPath.total_time_in_min
-   // useEffect(() => {
-
-   //    // четкое время
-   //    const toHoursAndMinutes = (timeInMin) => {
-   //       const minutes = timeInMin % 60
-   //       const hours = Math.floor(timeInMin / 60)
-   //       return `${hours.toString()}:${minutes.toString().padStart(2, '0')}`
-   //    }
-
-   //    setTotalTime(toHoursAndMinutes(timeInMin))
-   // }, [timeInMin])
+   // Достаю текущий путь 
+   const ourPath = useSelector(state => state?.currentReducer?.path)
+   
 
 
-   // const planBtn = () => { setFlagPlan(prev => !prev) }
+   const timeInMin = ourPath?.path?.total_time_in_min
+   useEffect(() => {
+
+      // четкое время
+      const toHoursAndMinutes = (timeInMin) => {
+         const minutes = timeInMin % 60
+         const hours = Math.floor(timeInMin / 60)
+         return `${hours.toString()}:${minutes.toString().padStart(2, '0')}`
+      }
+
+      setTotalTime(toHoursAndMinutes(timeInMin))
+   }, [timeInMin])
+
+
+   const planBtn = () => { setFlagPlan(prev => !prev) }
 
 
    return (
       <div>
 
-         {/* <div className={styles.path_title}>{ourPath.name_path}</div>
+         <div className={styles.path_title}>{ourPath?.path?.name_path}</div>
 
          <div className={styles.rating_container}>"
             <img className={styles.star_icon} src={starIcon} alt="" />
@@ -53,9 +57,17 @@ function Path() {
 
 
 
-         <div className={styles.path_total}>
-            <div className={styles.path_total_text}>Общее время: {totalTime} ч.</div>
-            <div className={styles.path_total_text}>Займет: {ourPath.total_days} д.</div>
+         {ourPath?.path?.description ? <div className={styles.path_description}> Описание пути: {ourPath?.path?.description}</div> : null}
+
+         <div className={styles.path_total_container}>
+            <div className={styles.path_total}>
+               <img className={styles.path_item_time_icon} src={clockIcon} alt="" />
+               <div className={styles.path_total_text}>Общее время: {totalTime} ч.</div>
+            </div>
+            <div className={styles.path_total}>
+               <img className={styles.path_item_time_icon} src={dayIcon} alt="" />
+               <div className={styles.path_total_text}>Займет: {ourPath?.path?.total_days} дн.</div>
+            </div>
          </div>
 
 
@@ -83,30 +95,31 @@ function Path() {
             <div className={styles.path_necessary_item}>
                <img className={styles.path_necessary_icon} src={skillIcon} alt="" />
                <div className={styles.path_necessary_title}>Необходимые навыки:</div>
-               <div className={styles.path_necessary_text}>{ourPath.necessary_skills}</div>
+               {ourPath?.path?.necessary_skills ? <div className={styles.path_necessary_text}>{ourPath.path.necessary_skills}</div> : <div>нет</div>}
             </div>
 
             <div className={styles.path_necessary_item}>
                <img className={styles.path_necessary_icon} src={stuffIcon} alt="" />
                <div className={styles.path_necessary_title}>Необходимые вещи:</div>
-               <div className={styles.path_necessary_text}>{ourPath.necessary_stuff}</div>
-            </div> */}
+               {ourPath?.path?.necessary_stuff ? <div className={styles.path_necessary_text}>{ourPath?.path?.necessary_stuff}</div> : <div>нет</div>}
+            </div>
+
 
             {/* TODO КАК ДОБАВИТЬ СОВЕТЫ, ДНИ, ПЛАН НА ДЕНЬ И СОВЕТЫ НА ДЕНЬ, ЕСЛИ ОНИ В ДРУГОЙ ТАБЛИЦЕ запихнуть это еще при добавлении в current */}
             {/* TODO ПРИ ОБНОВЛЕНИЕ CURRENT REDUCER ОБНУЛЯЕТСЯ. КАК ТОГДА ДОСТАВАТЬ cделать по аналогии */}
+         </div>
 
-
-            {/* <div className={styles.path_total_text}>Советы:
+         {ourPath?.basicAdvices ?
+            <div className={styles.path_total_text}>Советы:
                <ul>
-                  {ourPath.basic_advices?.map((advice, i) => <li key={i}>{advice}</li>)}
+                  {ourPath?.basicAdvices?.map(advice => <li key={advice.id_basic_advice}>{advice.text_basic_advice}</li>)}
                </ul>
-            </div> 
+            </div>
+            : null}
 
-         </div>*/}
 
-
-         {/* <button className={styles.path_btn_plan} onClick={planBtn}> Содержание пути </button> */}
-         {/* {flagPlan ? <Plan /> : null} */}
+         <button className={styles.path_btn_start} onClick={planBtn}> Содержание пути </button>
+         {flagPlan ? <PathContent /> : null}
 
 
 

@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { sequelize, Skill, Path, BasicAdvice, Day, DayAdvice, Plan } = require('../db/models');
+const { Skill, Path, BasicAdvice, Day, DayAdvice, Plan } = require('../db/models');
 
 
 
-router.post('/api/', async (req, res) => {
+router.post('/', async (req, res) => {
 
 
    const {

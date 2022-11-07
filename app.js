@@ -64,9 +64,7 @@ app.use('/api', mainRouter);
 app.use('/api/add_new_path', addNewPathRouter);
 app.use('/api/open_path', openPathRouter);
 
-app.get('/ping', (req, res) => {
-    res.json({'answer': 'pong'})
-})
+
 
 
 

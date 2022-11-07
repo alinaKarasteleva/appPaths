@@ -150,6 +150,7 @@ function NewPath() {
       // fetch(`http://localhost:3001/add_new_path`, {
       fetch(`${SITE_URL()}api/add_new_path`, {
          method: 'POST',
+         mode: 'cors',
          headers: { 'Content-Type': 'application/json' },
          body: JSON.stringify({
             path_name,

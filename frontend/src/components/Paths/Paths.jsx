@@ -1,6 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import starIcon from './img/star.png'
 import clockIcon from './img/time.png'
@@ -48,8 +46,6 @@ function Paths({ path }) {
                   <div className={styles.path_item_time_text}>Займет: {path.total_days} дн.</div>
                </div>
 
-
-               {/* TODO почему-то при переходе на страницу пути не обновляются */}
 
                <div><span className={styles.necessary_title}>Необходимые навыки:</span>
                   {path.necessary_skills ? <span className={styles.necessary_text}> {path.necessary_skills}</span> : <span> не указаны</span>}
